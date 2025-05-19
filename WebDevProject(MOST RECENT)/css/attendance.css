@@ -1,0 +1,50 @@
+@import './variables.css';
+
+.banner-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    max-height: 300px;
+    object-fit: cover;
+    transition: all 0.3s ease-in-out;
+}
+.banner-img:hover {
+    transform: scale(1.05);
+}
+.banner-text {
+    margin-top: 10px;
+    font-style: italic;
+    color: #ffffff;
+}
+
+.ad-controls-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.ad-date-picker {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
+
+.ad-date-label {
+    margin-right: 10px;
+}
+
+.ad-date-input {
+    width: 180px;
+}
+
+.ad-icon-margin {
+    margin-right: 5px;
+}
+
+.ad-banner-container {
+    margin-top: 30px;
+    text-align: center;
+}

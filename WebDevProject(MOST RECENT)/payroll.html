@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Bulacan Polytechnic College</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/payroll.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+    </style>
+</head>
+<body>
+    <div class="container">
+
+<!-- SIDEBAR ----------------------------------------------------------------------->   
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <img src="/images/bpclogo.png" alt="BPC Logo" class="logo">
+                    <h2>BPC Payroll</h2>
+                </div>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+            
+            <ul class="menu">
+                <li>
+                    <a href="index.html" class="menu-item">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span class="menu-text">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="employees.html" class="menu-item">
+                        <i class="fas fa-users"></i>
+                        <span class="menu-text">Employees Management</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="departments.html" class="menu-item">
+                        <i class="fas fa-building"></i>
+                        <span class="menu-text">Department Management</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="attendance.html" class="menu-item">
+                        <i class="fas fa-clock"></i>
+                        <span class="menu-text">Attendance Tracking</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="payroll.html" class="menu-item active">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span class="menu-text">Payroll Management</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="reports.html" class="menu-item">
+                        <i class="fas fa-chart-bar"></i>
+                        <span class="menu-text">Payroll Reports</span>
+                        </a>
+                </li>
+                <li class="menu-bottom">
+                    <a href="login.html" class="menu-item" id="logoutBtn">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span class="menu-text">Log Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+<!-- SIDEBAR ----------------------------------------------------------------------->       
+
+<!-- DASHBOARD --------------------------------------------------------------------->
+        <div class="dashboard">
+            <div class="main-header">
+                <h1>Payroll Management</h1>
+                <div class="search-container">
+                    <input type="text" placeholder="Search payroll...">
+                </div>
+                <div class="user-info">
+                    Admin
+                </div>
+            </div>
+            
+
+            <div class="content-area"> <!-- DASHBOARD CONTENT --------------------->
+
+<!-- PAYROLL ----------------------------------------------------------------------->
+                <div class="action-buttons pr-action-buttons">
+                    <button id="generatePayrollBtn" class="btn btn-primary">
+                        <i class="fas fa-plus pr-icon-margin"></i>
+                        Generate Payroll
+                    </button>
+                </div>
+                <div class="table-container">
+                    <div class="table-header">
+                        <h2>Payroll Records</h2>
+                    </div>
+                    <table id="payrollTable">
+                        <tr>
+                            <th>Employee</th>
+                            <th>Pay Period</th>
+                            <th>Pay Date</th>
+                            <th>Gross Salary</th>
+                            <th>Total Deductions</th>
+                            <th>Net Salary</th>
+                            <th>Actions</th>
+                        </tr>
+                    </table>
+                </div>
+<!-- PAYROLL ----------------------------------------------------------------------->
+
+<!-- END --------------------------------------------------------------------------->
+                <div class="pr-campus-image-container">
+                    <img src="images/payroll-bg.jpg" alt="College Campus" class="pr-campus-image" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    <p class="pr-image-caption">Payroll Management</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+<!-- DASHBOARD --------------------------------------------------------------------->
+
+<!-- PAYROLL POPUP ----------------------------------------------------------------->
+    <div id="payrollModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="form-header">
+                <h2>Generate Payroll</h2>
+            </div>
+            <form id="payrollForm">
+                <div class="form-group">
+                    <label for="employeeId">Employee</label>
+                    <select id="employeeId" name="employeeId" class="form-control" required>
+                        <option value="">Select Employee</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="payPeriod">Pay Period</label>
+                    <input type="text" id="payPeriod" name="payPeriod" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="payDate">Pay Date</label>
+                    <input type="date" id="payDate" name="payDate" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="baseSalary">Base Salary</label>
+                    <input type="number" id="baseSalary" name="baseSalary" class="form-control" min="0" required>
+                </div>
+                
+                <div class="form-header">
+                    <h3>Deductions</h3>
+                </div>
+                
+                <div class="form-group">
+                    <label for="tax">Tax</label>
+                    <input type="number" id="tax" name="tax" class="form-control" min="0" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="sss">SSS</label>
+                    <input type="number" id="sss" name="sss" class="form-control" min="0" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="philhealth">PhilHealth</label>
+                    <input type="number" id="philhealth" name="philhealth" class="form-control" min="0" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="pagibig">Pag-IBIG</label>
+                    <input type="number" id="pagibig" name="pagibig" class="form-control" min="0" required>
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Generate Payroll</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <div id="payrollDetailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="form-header">
+                <h2>Payslip</h2>
+            </div>
+            <div id="payslipContainer" class="payslip">
+            </div>
+            <div class="pr-print-button-container">
+                <button id="printBtn" class="btn btn-primary">
+                    <i class="fas fa-print pr-icon-margin"></i>
+                    Print Payslip
+                </button>
+            </div>
+        </div>
+    </div>
+<!-- PAYROLL POPUP ----------------------------------------------------------------->
+
+    <script src="/js/utils.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/dashboard.js"></script>
+    <script src="/js/payroll.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/search.js"></script>
+</body>
+</html>

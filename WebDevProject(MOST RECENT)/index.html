@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Bulacan Polytechnic College</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="container"> <!-- MAIN CONTAINER ---------------------------------------->
+
+<!-- SIDEBAR ----------------------------------------------------------------------->        
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <img src="/images/bpclogo.png" alt="BPC Logo" class="logo">
+                    <h2>BPC Payroll</h2>
+                </div>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+            
+            <ul class="menu">
+                <li>
+                    <a href="index.html" class="menu-item active">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span class="menu-text">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="employees.html" class="menu-item">
+                        <i class="fas fa-users"></i>
+                        <span class="menu-text">Employees Management</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="departments.html" class="menu-item">
+                        <i class="fas fa-building"></i>
+                        <span class="menu-text">Department Management</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="attendance.html" class="menu-item">
+                        <i class="fas fa-clock"></i>
+                        <span class="menu-text">Attendance Tracking</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="payroll.html" class="menu-item">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span class="menu-text">Payroll Management</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="reports.html" class="menu-item">
+                        <i class="fas fa-chart-bar"></i>
+                        <span class="menu-text">Payroll Reports</span>
+                        </a>
+                </li>
+                <li class="menu-bottom">
+                    <a href="login.html" class="menu-item" id="logoutBtn">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span class="menu-text">Log Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+<!-- SIDEBAR ----------------------------------------------------------------------->   
+ 
+<!-- DASHBOARD --------------------------------------------------------------------->
+        <div class="dashboard">   
+            <div class="main-header">
+                <h1>Dashboard</h1>
+                <div class="search-container">
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="user-info">
+                    Admin
+                </div>
+            </div> 
+
+<div class="content-area"> <!-- DASHBOARD CONTENT ----------------------------------->
+
+<!-- MAIN STATS --------------------------------------------------------------------->   
+                <div class="stats">
+                    <div class="stat-card">
+                        <h3>Total Employees</h3>
+                        <div class="number" id="totalEmployees">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Departments</h3>
+                        <div class="number" id="totalDepartments">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Present Today</h3>
+                        <div class="number" id="totalPresent">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Next Payday</h3>
+                        <div class="number" id="nextPayday">--</div>
+                    </div>
+                </div>
+<!-- MAIN STATS --------------------------------------------------------------------->  
+ 
+<!-- PIE CHART ---------------------------------------------------------------------->   
+                <div class="charts-container">
+                    <div class="chart-container">
+                        <h3>Department Distribution</h3>
+                        <canvas id="departmentChart"></canvas>
+                    </div>
+                </div>
+<!-- PIE CHART ---------------------------------------------------------------------->   
+
+<!-- TABLE (Pay Period, Pay Date, Days Remaining) ---------------------------------->
+                <div class="table-container">
+                    <div class="table-header">
+                        <h2>Upcoming Paydays</h2>
+                    </div>
+                    <table id="upcomingPaydaysTable">
+                        <thead>
+                            <tr>
+                                <th>Pay Period</th>
+                                <th>Pay Date</th>
+                                <th>Days Remaining</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+<!-- TABLE (Pay Period, Pay Date, Days Remaining) ---------------------------------->
+
+<!-- TABLE (Name, Position, Department, Date Hired) --------------------------------->   
+                <div class="table-container">
+                    <div class="table-header">
+                        <h2>Recent Employees</h2>
+                    </div>
+                    <table id="recentEmployeesTable">
+                        <tr>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Department</th>
+                            <th>Date Hired</th>
+                        </tr>
+
+                    </table>
+                </div>
+<!-- TABLE (Name, Position, Department, Date Hired) --------------------------------->  
+
+
+
+
+
+
+
+
+
+<!-- END ------------------------------------------------------------------------>
+                <div class="id-banner-container">
+                    <img src="images/banner1.jpg" 
+                         alt="school-banner" 
+                         class="id-banner-image" 
+                         onmouseover="this.style.transform='scale(1.05)'" 
+                         onmouseout="this.style.transform='scale(1)'">
+                    <p class="id-banner-caption">Bulacan Polytechnic College</p>
+                </div>
+
+            </div>
+        </div>
+<!-- DASHBOARD --------------------------------------------------------------------->        
+
+</div>
+
+
+    <script src="/js/utils.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/dashboard.js"></script>
+    <script src="/js/app.js"></script> 
+    <script src="/js/search.js"></script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Bulacan Polytechnic College</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/reports.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <img src="/images/bpclogo.png" alt="BPC Logo" class="logo">
+                    <h2>BPC Payroll</h2>
+                </div>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+            
+            <ul class="menu">
+                <li>
+                    <a href="index.html" class="menu-item">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span class="menu-text">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="employees.html" class="menu-item">
+                        <i class="fas fa-users"></i>
+                        <span class="menu-text">Employees Management</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="departments.html" class="menu-item">
+                        <i class="fas fa-building"></i>
+                        <span class="menu-text">Department Management</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="attendance.html" class="menu-item">
+                        <i class="fas fa-clock"></i>
+                        <span class="menu-text">Attendance Tracking</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="payroll.html" class="menu-item">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span class="menu-text">Payroll Management</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="reports.html" class="menu-item active">
+                        <i class="fas fa-chart-bar"></i>
+                        <span class="menu-text">Payroll Reports</span>
+                    </a>
+                </li>
+                <li class="menu-bottom">
+                    <a href="login.html" class="menu-item" id="logoutBtn">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span class="menu-text">Log Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="dashboard">
+            <!-- Header -->
+            <div class="main-header">
+                <h1>Payroll Reports</h1>
+                <div class="search-container">
+                    <input type="text" placeholder="Search reports...">
+                </div>
+                <div class="user-info">
+                    Admin
+                </div>
+            </div>
+            
+            <!-- Reports Content -->
+            <div class="content-area">
+                <!-- Report Controls -->
+                <div class="form-container">
+                    <div class="form-header">
+                        <h2>Generate Report</h2>
+                    </div>
+                    <div class="rp-flex-container">
+                        <div class="form-group rp-flex-item">
+                            <label for="reportType">Report Type:</label>
+                            <select id="reportType" class="form-control">
+                                <option value="payroll">Payroll Summary</option>
+                                <option value="attendance">Attendance Summary</option>
+                                <option value="department">Department Summary</option>
+                                <option value="employee">Employee List</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group rp-flex-item">
+                            <label for="dateRangeStart">Start Date:</label>
+                            <input type="date" id="dateRangeStart" class="form-control">
+                        </div>
+                        
+                        <div class="form-group rp-flex-item">
+                            <label for="dateRangeEnd">End Date:</label>
+                            <input type="date" id="dateRangeEnd" class="form-control">
+                        </div>
+                        
+                        <div class="form-group rp-flex-item rp-flex-align-bottom">
+                            <button id="generateReportBtn" class="btn btn-primary">
+                                <i class="fas fa-file-alt rp-icon-margin"></i>
+                                Generate Report
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Report Output -->
+                <div id="reportContainer" class="report">
+                    <!-- Report content will be populated by JavaScript -->
+                </div>
+
+                <!-- College Campus and Financial Documents Images -->
+                <div class="rp-images-container">
+                    <div class="rp-image-box">
+                        <img src="/images/ads3.jpg" 
+                             alt="College Campus" 
+                             class="rp-report-image" 
+                             onmouseover="this.style.transform='scale(1.05)'" 
+                             onmouseout="this.style.transform='scale(1)'">
+                        <p class="rp-image-caption">BPC's Annual Payroll Report</p>
+                    </div>
+                    
+                    <div class="rp-image-box">
+                        <img src="/images/payroll.jpg" 
+                             alt="Financial Documents" 
+                             class="rp-report-image" 
+                             onmouseover="this.style.transform='scale(1.05)'" 
+                             onmouseout="this.style.transform='scale(1)'">
+                        <p class="rp-image-caption">Financial and Payroll Documentation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/js/utils.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/dashboard.js"></script>
+    <script src="/js/reports.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/search.js"></script>
+</body>
+</html>
