@@ -1,0 +1,36 @@
+@import './variables.css';
+
+.ey-action-container {
+    margin-bottom: 20px;
+}
+
+.ey-icon-margin {
+    margin-right: 5px;
+}
+
+.ey-images-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.ey-image-box {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.ey-employee-image {
+    width: 100%;
+    height: 250px;
+    border-radius: 8px;
+    object-fit: cover;
+    transition: all 0.3s ease-in-out;
+}
+
+.ey-image-caption {
+    margin-top: 10px;
+    font-style: italic;
+    color: #ffffff;
+}

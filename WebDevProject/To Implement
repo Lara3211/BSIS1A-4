@@ -1,53 +1,30 @@
-# WebDev
-WebDev
-npx serve
-
-
-
 MAIN REQUIREMENTS
 
 IMPLEMENTED      ------------------------------------
 
-• Admin
-
+• Admin 
 • Log in 
-
 • Manage employees (Add, edit, view employee profiles) 
-
 • Manage attendance of every employee 
-
 • Salary details 
-
 • Job designation, department 
-
-• Summary of attendance
-
+• Summary of attendance 
 • Notifications for pay dates
 
-
 • The daily rate varies for each employee.
-
 • Employee attendance is done by the admin.
 
 SEMI IMPLEMENTED  -----------------------------------
 
 • Calculate salary for selected days, gross and net pay 
-
 • Tax info
-
 • View/download pay slips  
-
 
 NOT IMPLEMENTED   -----------------------------------
 
 • Bank info 
-
 • Generate pay slips
-
 • Loan 
-
-
-
 
 
 
